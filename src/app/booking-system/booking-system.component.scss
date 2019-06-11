@@ -1,0 +1,115 @@
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+.form {
+    max-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    margin-top: 20px;
+    box-shadow: 0 0 3px #dddddd;
+    float: right;
+    
+}
+  .form-group {
+     margin-top: 20px;
+     
+  }
+  label {
+      display: block;
+  }
+  input, select {
+      width: 100%;
+      height: 30px;
+      padding-left: 3px;
+      border: none;
+      border: 1px solid grey;
+  }
+
+  .boxing {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+}
+img {
+    max-width: 100%;
+}
+.box {
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+.btn {
+   
+    border: none;
+    padding: 5px;
+    margin-right: 4px;
+    margin-top: -20px;
+    
+    width: 70px;
+    color: #fff;
+    
+}
+.danger {
+    background-color: #eb423c;
+}
+.disappear {
+    display: none;
+}
+.appear {
+    display: block;
+}
+.booked {
+  padding: 10px;
+  border: 1px solid #dddddd;
+}
+ul {
+  list-style: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

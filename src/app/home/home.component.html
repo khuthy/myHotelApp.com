@@ -1,0 +1,120 @@
+<div class="wrapper">
+  <div class="top-nav">
+    <ul>
+      <li><a routerLink="/"><img src="http://select-group.ae/wp-content/uploads/2016/01/logos_radisson.png" class="logo"></a></li>
+      <li><a routerLink="/"> Home</a></li>
+      <li><a href="#contact"> Contact Us</a></li>
+      
+      <li id="signin"><a routerLink="/register">Sign Up</a></li>
+      
+    </ul>
+    </div>
+
+    <header id="header">
+      <h1>Radisson Blu Sandton</h1>
+      <p class="head-text">Save your Money Now. Take a good-night-sleep. <br><br><button class="btn-info" routerLink="/book">Book Now</button></p>
+      
+      <form class="" [class]="hide" (submit)="loginUser($event)">
+        <h3>Log In</h3>
+        <div *ngIf="error != ''"><p class="error"  ><strong>Error:</strong><br><span>{{error}}</span></p></div>
+        <small><a href="#" class="fpassword">Forgot Password</a></small>
+          <div class="form-group">
+            <div class="feedback"><i class="fas fa-user"></i></div>
+            <input type="text" placeholder="Username" id="username" required>
+          </div>
+          <div class="form-group">
+              <div class="feedback"><i class="fas fa-lock"></i></div>
+            <input type="password" placeholder="Password" id="password" required>
+          </div>
+          <div class="form-group"><br>
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-sign-in-alt" style="font-size:15px"></i> Log In
+            </button>
+          </div>
+          <br><small><a routerLink="/register" class="fpassword">do not have an account? <strong>Sign Up</strong></a></small>
+      </form>
+    </header>
+
+    <div class="rooms"><br><br><br>
+      <h1>Gallery</h1><hr><br>
+      <div class="gallery">
+          <div class="box">
+            <div></div><img src="https://images.trvl-media.com/hotels/6000000/5680000/5679900/5679898/5679898_36_z.jpg">
+            <p><strong></strong></p>
+           
+           
+          </div>
+          <div class="box">
+            <div></div><img src="https://images.trvl-media.com/hotels/6000000/5680000/5679900/5679898/5679898_39_z.jpg">
+            <p>Double Rooms</p>
+           
+           
+          </div>
+          <div class="box">
+            <div></div><img src="http://blog.radissonblu.com/wp-content/uploads/2015/12/Radisson-Blu-Plaza-Hotel-Ljubljana_bed-room-1024x681.jpg">
+            <p>Double Rooms</p>
+           
+           
+          </div>
+          <div class="box">
+            <div></div><img src="http://blog.radissonblu.com/wp-content/uploads/2015/12/Radisson-Blu-Plaza-Hotel-Ljubljana_bed-room-1024x681.jpg">
+            <p>Double Rooms</p>
+           
+           
+          </div>
+           <div class="box">
+            <div></div><img src="https://images.trvl-media.com/hotels/1000000/10000/4300/4270/4270_118_z.jpg">
+            <strong><p>Double Rooms</p></strong>
+           
+           
+          </div>
+          <div class="box">
+            <div></div><img src="https://cache.radissonhotels.com/galleries/radblu/photos/webextra/amszq/rooms/amszq-rooms-standard-room-1.jpg">
+            <p>Double Rooms</p>
+           
+           
+          </div>
+          <div class="box">
+            <div></div><img src="https://thepointsguy.com/wp-content/uploads/2012/08/Radisson-Blu-Copenhagen-Room.jpg">
+            <p>Double Rooms</p>
+           
+           
+          </div>
+          <div class="box">
+            <div></div><img src="http://justanotherpointstraveler.boardingarea.com/wp-content/uploads/2012/03/DSCN1087.jpg">
+            <p>Double Rooms</p>
+           
+           
+          </div>
+        </div>
+
+        <br><br><hr><br>
+        <a id="contact"></a>
+        <div class="forms" >
+          <h2 style="color: darkorange">Contact Us</h2>
+          <form action="" (submit)=" ContactUs($event)">
+            <div *ngIf="error != '' || success != ''"><p class="error"  ><strong>Error:</strong><br><span>{{error2}}</span></p></div>
+              <div class="form-group">
+                <label for="username" class="form-label">Full Name:</label>
+                <input type="text" name="username" id="username" class="input-form" id="name" placeholder="Enter Full name" style="width: 97%;" />
+              </div>
+              <div class="form-group">
+                <label for="username" class="form-label">Email Address:</label>
+                <input type="text" name="username" id="username" class="input-form" id="email" placeholder="Enter Full name" style="width: 97%;" />
+              </div>
+              <div class="form-group">
+                <label for="username" class="form-label">Messages:</label>
+                <textarea class="input-form" style="width: 100%;height: 200px;" name="message"></textarea>
+              </div>
+              <div class="form-group">
+                <button class="btn-submit" style="width: 80px;">Send</button><br><br>
+              </div>
+          </form>
+        </div>
+
+
+      </div>
+      <footer id="footer">
+          <p style="font-family: Arial, Helvetica, sans-serif">&copy;Right Reserved. Soweto Empowerment Zone CodeTribe 2019</p>
+      </footer>
+</div>

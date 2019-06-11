@@ -1,0 +1,134 @@
+<div class="sidebar">
+    <a [class]="active" (click)="room()">Add Room</a>
+    <a [class]="active" (click)="reserve()">Reservation</a>
+    <a [class]="active" (click)="pay()">Payments</a>
+    <a routerLink="/" class="active">Logout Now</a>
+
+  </div>
+  
+  <div class="content">
+    <!-- adding a room -->
+    <div class="" [class]="roomClass">
+      <h1>Add Rooms</h1>
+        <form class="form">
+          <div class="form-group">
+            <label>Image</label>
+            <input type="url" name="url" [(ngModel)]="model.url">
+          </div>
+          <div class="form-group">
+            <label>Room Type</label>
+            <select   name="roomtype" [(ngModel)]="model.roomtype">
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+              <option value="Luxury">Luxury</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="number" value="R " name="price" [(ngModel)]="model.price">
+          </div>
+          <div class="form-group">
+            <button type="button" (click)="addRoom()">Add Room</button>
+          </div>
+        </form>
+
+        <div class="boxing">
+          <div class="box" *ngFor="let room of rooms; let i=index">
+            <img src="{{room.url}}">
+            <p ><strong>{{room.roomtype}}</strong></p><br>
+            <h2 style="color: darkgoldenrod">R {{room.price}}.00</h2>
+            <div class="button">
+              <button class="btn">Edit</button>
+              <button class="btn danger" (click)="deleteRoom(i)">Delete</button>
+            </div>
+          </div>
+          
+            
+        </div>
+
+    </div>
+    <!-- adding a room end here!! -->
+
+    <!-- booking starts here -->
+    <div class="" [class]="reserveClass">
+      <h1>Reservation</h1>
+
+        <div class="form">
+          <div class="booked" *ngFor="let book of books, let i=index">
+           
+              <strong>Booking Payslip</strong><br>
+              <ul>
+                <li>Room type   : {{book.roomtype}}</li>
+                <li>Guest Number: {{book.guest}}</li>
+                <li>Days        : {{book.days}}</li>
+               
+                <li>Total       : R{{book.total}}.00</li>
+              </ul><br><hr>
+              <button style="background: darkorange;padding: 10px; margin-right: 10px; border: none;color:white;" (click)="deletePay(i)">delete</button>
+              <button style="background: forestgreen;padding: 10px; border: none;color:white;" (click)="payment(i)">Pay Now</button>
+              <hr>
+          </div><br><br>
+        </div>
+
+
+        <div class="boxing">
+            <div class="box" *ngFor="let room of rooms; let i=index">
+              <img src="{{room.url}}">
+              <p ><strong>{{room.roomtype}}</strong></p><br>
+              <h2 style="color: darkgoldenrod">R {{room.price}}.00</h2>
+              <div class="bookin">
+                <form (submit)="bookNow($event, i)">
+                  <div class="form-group">
+                    <label>Number of Days</label>
+                    <input type="number" placeholder="Check in - Checkout" id="days" name="days">
+                  </div>
+                  <div class="form-group">
+                    <label>Number Of Guest</label>
+                    <input type="number" id="guest" name="guest">
+                  </div>
+                  
+                    <div class="form-group">
+                      <button type="submit">Book Now</button>
+                    </div>
+
+                </form>
+                
+               
+              </div>
+            </div>
+    </div>
+    <!-- Booking ends here -->
+  </div>
+  <!-- payment starts here -->
+  <div class="" [class]="payClass">
+   
+      <form (submit)="paying($event)">
+          <h1>Payments</h1>
+        <div class="form-group">
+          <label>Card Holder Number</label>
+          <input type="text" name="name" id="username" required>
+        </div>
+        <div class="form-group">
+          <label>Account Number</label>
+          <input type="text" name="account" required>
+        </div>
+        <div class="form-group">
+          <label>Card CVV</label>
+          <input type="text" name="cvv" required>
+        </div>
+        <div class="form-group">
+          <label>expiry date</label>
+          <input type="date" name="expiry" required>
+        </div>
+        <div class="form-group"><button class="btn-submit" type="submit">Submit</button></div>
+      </form>
+
+
+      
+         
+        
+
+</div>
+<!-- payments ends here -->
+  </div>
+
